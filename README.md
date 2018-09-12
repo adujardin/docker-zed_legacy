@@ -21,6 +21,8 @@ Once nvidia-docker is installed, make sure it run fine by launching :
 
 `--privileged` option is used to pass through all the device to the docker container, it might not be very safe but provides an easy solution to connect the USB3 camera to the container.
 
+The image are built with [Gitlab CI](https://gitlab.com/adujardin/docker-zed)
+
 ## Rebuilt or modifying the image
 
 ### Build the image
