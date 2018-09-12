@@ -1,0 +1,24 @@
+image: docker:stable
+
+services:
+    - docker:stable-dind
+
+before_script:
+  - docker info
+  - docker login -u "${REGISTRY_USER}" -p "${REGISTRY_TOKEN}"
+
+.build_image_template: &build_image_definition
+    script:
+    - docker build -t "${CI_REGISTRY_IMAGE}:${VERSION}" ./"${VERSION}"
+    - docker tag "${CI_REGISTRY_IMAGE}:${VERSION}" "${CI_REGISTRY_IMAGE}:${VERSION}";
+    - docker push "${CI_REGISTRY_IMAGE}"
+
+v2.6-cuda9.0:
+    variables:
+        VERSION: "ubuntu1604-cuda9.0-zed2.6"
+    <<: *build_image_definition
+
+v2.6-cuda9.2:
+    variables:
+        VERSION: "ubuntu1604-cuda9.2-zed2.6"
+    <<: *build_image_definition
