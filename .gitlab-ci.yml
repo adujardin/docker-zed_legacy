@@ -18,6 +18,11 @@ v2.6-cuda9.0:
         VERSION: "ubuntu1604-cuda9.0-zed2.6"
     <<: *build_image_definition
 
+v2.6-cuda9.0-ros:
+    variables:
+        VERSION: "ubuntu1604-cuda9.0-zed2.6-ros"
+    <<: *build_image_definition
+
 v2.6-cuda9.2:
     variables:
         VERSION: "ubuntu1604-cuda9.2-zed2.6"
