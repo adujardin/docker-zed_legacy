@@ -1,6 +1,8 @@
 # Docker with the ZED SDK
 
-This images let you use the ZED SDK with docker, even with the ZED camera connected (or an SVO file)
+#### The docker images for the ZED SDK are now supported by Stereolabs : https://github.com/stereolabs/docker-zed
+
+These images let you use the ZED SDK with docker, even with the ZED camera connected (or an SVO file)
 
 ## Getting started
 
@@ -21,13 +23,13 @@ Once nvidia-docker is installed, make sure it run fine by launching :
 
 `--privileged` option is used to pass through all the device to the docker container, it might not be very safe but provides an easy solution to connect the USB3 camera to the container.
 
-The image are built with [Gitlab CI](https://gitlab.com/adujardin/docker-zed)
+The images are built with [Gitlab CI](https://gitlab.com/adujardin/docker-zed)
 
 ## Rebuilt or modifying the image
 
 ### Build the image
 
-The image are based on cuda images from nvidia https://gitlab.com/nvidia/cuda/
+The images are based on cuda images from nvidia https://gitlab.com/nvidia/cuda/
 
 The cuda version can easily be change, as the ZED SDK version.
 
@@ -53,5 +55,5 @@ Remainder for myself, to push an image :
 
 ### Limitations / TODO
 
-- Their is currently no display on this containers
+- There is currently no display on this containers
 
